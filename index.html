@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survei Kepuasan Pelayanan SMPIT Al-Kautsar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F766E',
+                        secondary: '#F59E0B',
+                        light: '#F0FDFA',
+                        dark: '#134E4A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .input-radio {
+                @apply w-5 h-5 text-primary focus:ring-primary/50 border-gray-300;
+            }
+            .section-title {
+                @apply text-lg font-bold text-dark border-b-2 border-primary/20 pb-2 mb-4;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 min-h-screen">
+    <div class="container mx-auto max-w-3xl bg-white shadow-xl rounded-lg my-8 overflow-hidden">
+        <!-- Header -->
+        <div class="bg-primary text-white p-6 text-center">
+            <h1 class="text-[clamp(1.2rem,3vw,1.7rem)] font-bold">SURVEI KEPUASAN PELAYANAN</h1>
+            <h2 class="text-lg opacity-90 mt-1">SMPIT Al-Kautsar</h2>
+            <p class="text-sm mt-2 italic">"Terwujudnya Generasi Rabbani, Mandiri, Berprestasi Berwawasan Teknologi"</p>
+        </div>
+
+        <form id="surveiForm" class="p-6 md:p-8">
+
+            <!-- Kata Pengantar -->
+            <section class="mb-10 bg-light p-5 rounded-lg border border-primary/10">
+                <h3 class="font-bold text-primary mb-3">Kata Pengantar</h3>
+                <div class="text-sm leading-relaxed text-gray-700 space-y-2">
+                    <p>Assalamu’alaikum warahmatullahi wabarakatuh.</p>
+                    <p>Segala puji bagi Allah Subhanahu wa Ta’ala atas limpahan rahmat dan karunia-Nya. Dalam rangka meningkatkan kualitas pelayanan pendidikan serta penguatan budaya mutu di lingkungan SMPIT Al-Kautsar, kami memohon kesediaan Bapak/Ibu/Saudara untuk berpartisipasi dalam pengisian Survei Kepuasan Pelayanan ini.</p>
+                    <p>Survei ini disusun sebagai sarana evaluasi dan refleksi bersama terhadap berbagai layanan sekolah, baik dalam aspek akademik, pembinaan karakter Islami, pelayanan administrasi, program Al-Qur’an, kegiatan siswa, maupun layanan pendukung lainnya termasuk transportasi antar jemput siswa.</p>
+                    <p>Pendapat, penilaian, serta masukan yang diberikan merupakan bentuk kontribusi yang sangat berharga bagi pengembangan SMPIT Al-Kautsar agar senantiasa mampu memberikan pelayanan pendidikan yang profesional, amanah, dan berorientasi pada pembentukan generasi Qur’ani yang unggul.</p>
+                    <p>Kami berharap Bapak/Ibu/Saudara dapat memberikan penilaian secara objektif, jujur, dan konstruktif sesuai dengan pengalaman yang dirasakan selama menerima layanan di SMPIT Al-Kautsar.</p>
+                    <p>Atas perhatian, dukungan, dan partisipasi yang diberikan, kami sampaikan jazakumullah khairan katsiran.</p>
+                    <p>Assalamu'alaikum warahmatullahi wabarakatuh.</p>
+                </div>
+            </section>
+
+            <!-- A. Identitas Responden -->
+            <section class="mb-10">
+                <h3 class="section-title">A. Identitas Responden</h3>
+                <p class="text-sm text-gray-600 mb-4">(Berikan tanda centang pada pilihan yang sesuai)</p>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">1. Status Responden</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <label class="flex items-center gap-2 cursor-pointer p-2 border rounded hover:bg-light transition">
+                            <input type="radio" name="status_responden" value="Orang Tua/Wali" class="input-radio" required>
+                            <span>Orang Tua/Wali</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer p-2 border rounded hover:bg-light transition">
+                            <input type="radio" name="status_responden" value="Siswa" class="input-radio">
+                            <span>Siswa</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer p-2 border rounded hover:bg-light transition">
+                            <input type="radio" name="status_responden" value="Guru/Karyawan" class="input-radio">
+                            <span>Guru/Karyawan</span>
+                        </label>
+                        <label class="flex items-center gap-2 cursor-pointer p-2 border rounded hover:bg-light transition">
+                            <input type="radio" name="status_responden" value="Masyarakat Umum" class="input-radio">
+                            <span>Masyarakat Umum</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="text-sm text-gray-500">
+                    <p><i class="fa fa-info-circle mr-1"></i> Tanggal pengisian akan dicatat otomatis oleh sistem.</p>
+                </div>
+            </section>
+
+            <!-- B. Petunjuk Pengisian -->
+            <section class="mb-10 bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <h3 class="font-semibold text-dark mb-2">B. Petunjuk Pengisian</h3>
+                <p class="text-sm mb-3">Berikan penilaian terhadap pelayanan SMPIT Al-Kautsar dengan memilih skor sesuai kriteria berikut:</p>
+                <div class="grid grid-cols-5 text-center text-sm font-medium">
+                    <div class="p-2 bg-red-100 rounded">1<br><span class="font-normal">Sangat Tidak Puas</span></div>
+                    <div class="p-2 bg-orange-100 rounded">2<br><span class="font-normal">Tidak Puas</span></div>
+                    <div class="p-2 bg-yellow-100 rounded">3<br><span class="font-normal">Cukup Puas</span></div>
+                    <div class="p-2 bg-green-100 rounded">4<br><span class="font-normal">Puas</span></div>
+                    <div class="p-2 bg-emerald-200 rounded">5<br><span class="font-normal">Sangat Puas</span></div>
+                </div>
+            </section>
+
+            <!-- C. Instrumen Penilaian -->
+            <section class="mb-10">
+                <h3 class="section-title">C. Instrumen Penilaian Kepuasan Pelayanan</h3>
+                <p class="text-sm text-gray-600 mb-4">Pilih satu nilai untuk setiap aspek di bawah ini:</p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border p-2 text-left w-12">No</th>
+                                <th class="border p-2 text-left">Aspek Pelayanan</th>
+                                <th class="border p-2 text-center w-14">1</th>
+                                <th class="border p-2 text-center w-14">2</th>
+                                <th class="border p-2 text-center w-14">3</th>
+                                <th class="border p-2 text-center w-14">4</th>
+                                <th class="border p-2 text-center w-14">5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Daftar Pertanyaan Lengkap Sesuai Draf -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">1</td>
+                                <td class="border p-2">Keramahan guru dan pegawai dalam melayani</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q1_keramahan" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q1_keramahan" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q1_keramahan" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q1_keramahan" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q1_keramahan" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">2</td>
+                                <td class="border p-2">Kedisiplinan guru dan pegawai</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q2_kedisiplinan" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q2_kedisiplinan" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q2_kedisiplinan" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q2_kedisiplinan" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q2_kedisiplinan" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">3</td>
+                                <td class="border p-2">Kecepatan pelayanan administrasi sekolah</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q3_administrasi" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q3_administrasi" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q3_administrasi" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q3_administrasi" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q3_administrasi" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">4</td>
+                                <td class="border p-2">Kemudahan memperoleh informasi sekolah</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q4_informasi" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q4_informasi" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q4_informasi" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q4_informasi" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q4_informasi" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">5</td>
+                                <td class="border p-2">Respons sekolah terhadap keluhan/saran</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q5_respon_keluhan" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q5_respon_keluhan" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q5_respon_keluhan" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q5_respon_keluhan" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q5_respon_keluhan" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">6</td>
+                                <td class="border p-2">Kebersihan lingkungan sekolah</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q6_kebersihan" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q6_kebersihan" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q6_kebersihan" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q6_kebersihan" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q6_kebersihan" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">7</td>
+                                <td class="border p-2">Kenyamanan ruang belajar</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q7_ruang_belajar" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q7_ruang_belajar" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q7_ruang_belajar" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q7_ruang_belajar" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q7_ruang_belajar" value="5" class="input-radio"></td>
+                            </tr>
+                                                        <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">8</td>
+                                <td class="border p-2">Kenyamanan Toilet/MCK</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q8_toilet" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q8_toilet" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q8_toilet" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q8_toilet" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q8_toilet" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">9</td>
+                                <td class="border p-2">Keamanan lingkungan sekolah</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q9_keamanan" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q9_keamanan" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q9_keamanan" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q9_keamanan" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q9_keamanan" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">10</td>
+                                <td class="border p-2">Lingkungan sekolah bebas bullying (perundungan)</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q10_bebas_bullying" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q10_bebas_bullying" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q10_bebas_bullying" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q10_bebas_bullying" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q10_bebas_bullying" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">11</td>
+                                <td class="border p-2">Kualitas pembelajaran di kelas</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q11_kualitas_belajar" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q11_kualitas_belajar" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q11_kualitas_belajar" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q11_kualitas_belajar" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q11_kualitas_belajar" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">12</td>
+                                <td class="border p-2">Pembinaan karakter Islami siswa</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q12_karakter_islami" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q12_karakter_islami" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q12_karakter_islami" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q12_karakter_islami" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q12_karakter_islami" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">13</td>
+                                <td class="border p-2">Program Tahfizh Al-Qur'an metode Wafa</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q13_tahfizh" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q13_tahfizh" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q13_tahfizh" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q13_tahfizh" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q13_tahfizh" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">14</td>
+                                <td class="border p-2">Program Tahsin Al-Qur'an Metode Wafa</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q14_tahsin" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q14_tahsin" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q14_tahsin" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q14_tahsin" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q14_tahsin" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">15</td>
+                                <td class="border p-2">Pembiasaan ibadah sholat wajib siswa</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q15_sholat" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q15_sholat" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q15_sholat" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q15_sholat" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q15_sholat" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">16</td>
+                                <td class="border p-2">Program Kelas Mutu (Al-Qur'an/Bilingual/ICT)</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q16_kelas_mutu" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q16_kelas_mutu" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q16_kelas_mutu" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q16_kelas_mutu" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q16_kelas_mutu" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">17</td>
+                                <td class="border p-2">Penegakan tata tertib dan kedisiplinan sekolah</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q17_tata_tertib" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q17_tata_tertib" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q17_tata_tertib" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q17_tata_tertib" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q17_tata_tertib" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">18</td>
+                                <td class="border p-2">Kegiatan ekstrakurikuler sekolah</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q18_ekskul" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q18_ekskul" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q18_ekskul" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q18_ekskul" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q18_ekskul" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">19</td>
+                                <td class="border p-2">Pelayanan transportasi antar jemput siswa - Supir tidak merokok</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q19_antar_jemput_sopan" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q19_antar_jemput_sopan" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q19_antar_jemput_sopan" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q19_antar_jemput_sopan" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q19_antar_jemput_sopan" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">20</td>
+                                <td class="border p-2">Pelayanan transportasi antar jemput siswa - Supir memakai celana panjang</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q20_antar_jemput_penampilan" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q20_antar_jemput_penampilan" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q20_antar_jemput_penampilan" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q20_antar_jemput_penampilan" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q20_antar_jemput_penampilan" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">21</td>
+                                <td class="border p-2">Pelayanan transportasi antar jemput siswa - Supir bertutur kata sopan</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q21_antar_jemput_komunikasi" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q21_antar_jemput_komunikasi" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q21_antar_jemput_komunikasi" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q21_antar_jemput_komunikasi" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q21_antar_jemput_komunikasi" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">22</td>
+                                <td class="border p-2">Ketepatan waktu layanan antar jemput</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q22_antar_jemput_waktu" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q22_antar_jemput_waktu" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q22_antar_jemput_waktu" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q22_antar_jemput_waktu" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q22_antar_jemput_waktu" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">23</td>
+                                <td class="border p-2">Keamanan dan kenyamanan transportasi sekolah</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q23_antar_jemput_keamanan" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q23_antar_jemput_keamanan" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q23_antar_jemput_keamanan" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q23_antar_jemput_keamanan" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q23_antar_jemput_keamanan" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">24</td>
+                                <td class="border p-2">Komunikasi sekolah dengan orang tua</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q24_komunikasi" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q24_komunikasi" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q24_komunikasi" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q24_komunikasi" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q24_komunikasi" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">25</td>
+                                <td class="border p-2">Transparansi informasi biaya/program sekolah</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q25_transparansi_biaya" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q25_transparansi_biaya" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q25_transparansi_biaya" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q25_transparansi_biaya" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q25_transparansi_biaya" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">26</td>
+                                <td class="border p-2">Kesesuaian pelayanan dengan harapan</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q26_kesesuaian_harapan" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q26_kesesuaian_harapan" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q26_kesesuaian_harapan" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q26_kesesuaian_harapan" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q26_kesesuaian_harapan" value="5" class="input-radio"></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="border p-2 text-center">27</td>
+                                <td class="border p-2">Kepuasan secara umum terhadap SMPIT Al-Kautsar</td>
+                                <td class="border p-2 text-center"><input type="radio" name="q27_kepuasan_umum" value="1" class="input-radio" required></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q27_kepuasan_umum" value="2" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q27_kepuasan_umum" value="3" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q27_kepuasan_umum" value="4" class="input-radio"></td>
+                                <td class="border p-2 text-center"><input type="radio" name="q27_kepuasan_umum" value="5" class="input-radio"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- D. Saran dan Masukan -->
+            <section class="mb-10">
+                <h3 class="section-title">D. Saran dan Masukan</h3>
+                
+                <div class="mb-5">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">1. Pelayanan yang sudah berjalan baik:</label>
+                    <textarea name="saran_baik" rows="3" class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Tuliskan hal-hal positif yang sudah dirasakan..."></textarea>
+                </div>
+
+                <div class="mb-5">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">2. Pelayanan yang perlu ditingkatkan:</label>
+                    <textarea name="saran_perbaikan" rows="3" class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Tuliskan aspek yang menurut Anda masih perlu diperbaiki..."></textarea>
+                </div>
+
+                <div class="mb-5">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">3. Saran dan Usulan untuk pengembangan SMPIT Al-Kautsar:</label>
+                    <textarea name="saran_usulan" rows="3" class="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Tuliskan ide atau masukan Anda..."></textarea>
+                </div>
+            </section>
+
+            <!-- E. Penutup -->
+            <section class="mb-8 bg-light p-4 rounded-lg border border-primary/10">
+                <h3 class="font-semibold text-dark mb-2">E. Penutup</h3>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                    Terima kasih atas partisipasi Bapak/Ibu/Saudara dalam mengisi survei kepuasan pelayanan ini. Masukan yang diberikan akan menjadi bahan evaluasi untuk peningkatan mutu pelayanan SMPIT Al-Kautsar.
+                </p>
+            </section>
+
+            <!-- Tombol Kirim -->
+            <div class="text-center">
+                <button type="submit" class="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-8 rounded-lg transition transform hover:scale-[1.02]">
+                    <i class="fa fa-paper-plane-o mr-2"></i> Kirim Survei
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
