@@ -32,8 +32,9 @@ document.getElementById("surveiForm").addEventListener("submit", async function(
     // Kirim ke Google Sheet
     fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
+        mode: "cors",
         headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "text/plain;charset=utf-8",
         },
         body: JSON.stringify(data),
     })
